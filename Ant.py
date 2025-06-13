@@ -7,7 +7,7 @@ from scipy.optimize import fsolve
 st.set_page_config(page_title="T-x-y and x-y Diagrams - Mohd Ali Khan", layout="centered")
 st.title("T-x-y and x-y Diagram Analysis for Heptane-Octane Mixture")
 
-st.markdown("""
+markdown_equations = r"""
 **Submitted by**: Mohd Ali Khan  
 **To:** Prof. Imran Mohammad  
 **Department of Petrochemical**  
@@ -25,43 +25,53 @@ These diagrams are useful in understanding phase behavior in distillation.
 ### 1. Antoine Equation
 Used to calculate the **saturation pressure (Psat)** of each component:
 
-\[log10(Psat) = A - (B)/(C + T)\]
+$$
+\log_{10}(P_{sat}) = A - \frac{B}{C + T}
+$$
 
 Where:
-- T is temperature in °C
-- Psat is in mmHg
+- \( T \) is temperature in °C  
+- \( P_{sat} \) is in mmHg  
 
-Antoine constants used:
-- **Heptane**: A = 6.893, B = 1260, C = 216
-- **Octane**: A = 6.9094, B = 1351, C = 217
+Antoine constants used:  
+- **Heptane**: A = 6.893, B = 1260, C = 216  
+- **Octane**: A = 6.9094, B = 1351, C = 217  
 
 ---
 ### 2. T-x-y Diagram (Temperature vs Mole Fractions)
-#### How it is calculated:
-1. For each liquid mole fraction \( x \) of heptane, calculate the bubble point temperature \( T \) by solving:
-   \[P total = x_H * P_H^*(T) + x_O * P_O^*(T)\] 
-2. Then calculate vapor mole fraction \( y \):
-            
-   \[y_H = (x_H * P_H^*(T))/(P_total)\]
-            
-   \[y_O = 1 - y_H\]  
-            
-   \[P total = 760 mmhg\]
-            
-3. Plot T vs x and T vs y.
+**How it is calculated:**
+
+1. For each liquid mole fraction \( x_H \) of heptane, calculate the bubble point temperature \( T \) by solving:  
+   $$
+   P_{total} = x_H \cdot P_H^{sat}(T) + x_O \cdot P_O^{sat}(T)
+   $$
+
+2. Then calculate vapor mole fraction \( y_H \):  
+   $$
+   y_H = \frac{x_H \cdot P_H^{sat}(T)}{P_{total}}
+   $$
+   $$
+   y_O = 1 - y_H
+   $$  
+   $$
+   P_{total} = 760\ \text{mmHg}
+   $$
+
+3. Plot \( T \) vs \( x \) and \( T \) vs \( y \).
 
 ---
 ### 3. x-y Diagram (Vapor vs Liquid Mole Fraction)
-#### How it is calculated:
+**How it is calculated:**
+
 Once we calculate mole fraction \( x \) in liquid and corresponding \( y \) in vapor (from the T-x-y data), we simply:
-- Plot \( x \) on X-axis
-- Plot \( y \) on Y-axis
-- Include diagonal reference line (y = x) for comparison
+- Plot \( x \) on X-axis  
+- Plot \( y \) on Y-axis  
+- Include diagonal reference line \( y = x \) for comparison  
 
 This helps understand the separation behavior in distillation.
 
 ---
-""")
+"""
 
 # Antoine constants
 antoine_constants = {
