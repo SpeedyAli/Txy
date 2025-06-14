@@ -8,9 +8,9 @@ st.set_page_config(page_title="T-x-y and x-y Diagrams - Mohd Ali Khan", layout="
 st.title("T-x-y and x-y Diagram Analysis for Heptane-Octane Mixture")
 
 st.markdown("""
-**Submitted by**: Mohd Ali Khan  
+#### Submitted by: **Mohd Ali Khan**  
 **To:** Prof. Imran Mohammad  
-**Department of Petrochemical**  
+**Department of Petrochemical Engineering**  
 **UIT RGPV, Bhopal**
 
 ---
@@ -24,9 +24,9 @@ These diagrams are useful in understanding phase behavior in distillation.
 ---
 ### 1. Antoine Equation
 Used to calculate the **saturation pressure (Psat)** of each component:
-
-\[log10(Psat) = A - (B)/(C + T)\]
-
+""")
+st.latex(r"P_{\text{sat}} = 10^{A - \frac{B}{C + T}}")
+st.markdown("""
 Where:
 - T is temperature in °C
 - Psat is in mmHg
@@ -39,15 +39,13 @@ Antoine constants used:
 ### 2. T-x-y Diagram (Temperature vs Mole Fractions)
 #### How it is calculated:
 1. For each liquid mole fraction \( x \) of heptane, calculate the bubble point temperature \( T \) by solving:
-   \[P total = x_H * P_H^*(T) + x_O * P_O^*(T)\] 
+""")
+st.latex(r"x P_{\text{heptane}}(T) + (1-x) P_{\text{octane}}(T) = P_{\text{total}} = 760 \text{ mmHg}")
+st.markdown("""
 2. Then calculate vapor mole fraction \( y \):
-            
-   \[y_H = (x_H * P_H^*(T))/(P_total)\]
-            
-   \[y_O = 1 - y_H\]  
-            
-   \[P total = 760 mmhg\]
-            
+""")
+st.latex(r"y = \frac{x P_{\text{heptane}}(T)}{P_{\text{total}}}")
+st.markdown("""
 3. Plot T vs x and T vs y.
 
 ---
@@ -129,8 +127,10 @@ ax2.grid(True)
 st.pyplot(fig2)
 
 st.markdown("""
+---
 ### Summary
 This app demonstrates the phase behavior of ideal mixtures using **heptane and octane** as an example.
 It calculates and visualizes the temperature and composition relationships in liquid-vapor equilibrium at constant pressure.
 Such tools are valuable for understanding distillation and separation processes.
+---
 """)
