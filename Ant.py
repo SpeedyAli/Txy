@@ -8,7 +8,7 @@ st.set_page_config(page_title="T-x-y and x-y Diagrams - Mohd Ali Khan", layout="
 st.title("T-x-y and x-y Diagram Analysis for Heptane-Octane Mixture")
 
 st.markdown("""
-#### Submitted by: **Mohd Ali Khan**  
+**Submitted by**: Mohd Ali Khan 
 **To:** Prof. Imran Mohammad  
 **Department of Petrochemical Engineering**  
 **UIT RGPV, Bhopal**
