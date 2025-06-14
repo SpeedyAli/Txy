@@ -127,10 +127,8 @@ ax2.grid(True)
 st.pyplot(fig2)
 
 st.markdown("""
----
 ### Summary
 This app demonstrates the phase behavior of ideal mixtures using **heptane and octane** as an example.
-It calculates and visualizes the temperature and composition relationships in liquid-vapor equilibrium at constant pressure.
+It calculates and visualizes the relationships between temperature and composition in liquid-vapor equilibrium at constant pressure.
 Such tools are valuable for understanding distillation and separation processes.
----
 """)
